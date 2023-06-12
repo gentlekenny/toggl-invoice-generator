@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Shrine (MDC Web Example App)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: { }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <div class="max-w-2xl mt-3 mx-auto">
+      <section>
+       <div class="w-full  flex justify-end pb-5" >
+          <div class="w-1/3">
+               <img
+              src= "{{{ companyFields.logo }}}" 
+              width="100%"
+            />
+          </div>
+      </div>
+      <div class="flex w-full  justify-between pb-5">
+          <div>
+            {{ companyFields.billCompany }} <br />
+            {{ companyFields.street }}<br />
+            {{ companyFields.stateZipCity }}<br />
+            {{ companyFields.country }}<br />
+          </div>
+           <div>
+              <p class="text-right">
+                {{ companyInfo.name }} <br />
+                {{ companyInfo.street }}<br />
+                {{ companyInfo.stateZipCity }} <br />
+                {{ companyInfo.country }} <br />
+                Reg. No. {{ companyInfo.reg }} <br />
+                VAT Id. {{ companyInfo.vat }}
+              </p>
+              <p class="text-sky-500 text-right">
+                Invoice Number: {{ invoiceNumber }} <br />
+                Invoice Date: {{ invoiceDate }}
+              </p>
+          </div>
+      </div>
+      </section>
+      <section>
+        <table class="w-full text-left text-sm">
+          <thead class="bg-zinc-400 text-xs uppercase text-white">
+            <tr class="border-b border-zinc-900">
+              <th scope="col" class="px-1 py-3">Item</th>
+              <th scope="col" class="px-1 py-3 text-right">hrs/qty</th>
+              <th scope="col" class="px-1 py-3 text-right">rate/price</th>
+              <th scope="col" class="px-1 py-3 text-right">subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each items}}
+            <tr class="border-b border-zinc-900 odd:bg-zinc-200 even:bg-zinc-400">
+              <th scope="col" class="px-1 py-2">{{ title.time_entry }}</th>
+              <th scope="col" class="px-1 py-2 text-right">{{ duration }}</th>
+              <th scope="col" class="px-1 py-2 text-right">{{ rateFormat }}</th>
+              <th scope="col" class="px-1 py-2 text-right">{{ total }}</th>
+            </tr>
+            {{/each}}
+            <tr class="border-b border-zinc-900 bg-zinc-400">
+              <th scope="col" class="px-1 py-2 text-white"></th>
+              <th scope="col" class="px-1 py-2 text-white text-right"></th>
+              <th scope="col" class="px-1 py-2 text-white text-right">Subtotal</th>
+              <th scope="col" class="px-1 py-2 text-white text-right">{{ totalFormat }}</th>
+            </tr>
+            <tr class="bg-zinc-200">
+              <th scope="col" class="px-1 py-2"></th>
+              <th scope="col" class="px-1 py-2 text-right"></th>
+              <th scope="col" class="px-1 py-2 text-right">Total</th>
+              <th scope="col" class="px-1 py-2 text-right">{{ totalFormat }}</th>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <br />
+      <br />
+      <br />
+    </div>
+    <footer class="absolute bottom-0 mb-3 w-full">
+      <div class="max-w-2xl mt-4 mx-auto">
+        <p class="text-sky-500">{{ accountInfo.type }}</p>
+        <table class="w-full text-left text-xs text-black">
+          <tbody>
+            <tr>
+              <td class="p-1">{{ footerFields.firstField }}</td>
+              <th class="p-1">{{ accountInfo.holder }}</th>
+              <td class="p-1"></td>
+              <td class="p-1"></td>
+            </tr>
+            <tr>
+              <td class="p-1">{{ footerFields.secondField}}</td>
+              <th class="p-1">{{ accountInfo.number }}</th>
+              <td class="p-1">{{ footerFields.thirdField }}</td>
+              <th class="p-1">{{ accountInfo.swiftCode }}</th>
+            </tr>
+            <tr>
+              <td class="p-1">{{ footerFields.fourthField }}</td>
+              <th class="p-1">{{ accountInfo.wireTransferNumber }}</th>
+              <td class="p-1">{{ footerFields.fifthField }}</td>
+              <th class="p-1">{{ accountInfo.routingNumber }} </th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </footer>
+  </body>
+</html>
