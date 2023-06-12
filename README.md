@@ -19,12 +19,11 @@ To run this invoice generator, do the following:
 yarn install
 ```
 
-- Position yourself in **src** folder
 - Modify .env.yaml file
-- Run command below to generate invoice
+- Run command below to generate invoice (FROM ROOT FOLDER!!!)
 
 ```
-ts-node pdf.ts
+src/ts-node pdf.ts
 ```
 
 After running this command, the message in terminal will appear, saying _Done: invoice.pdf is created!_. File named **invoice.pdf** will be generated in root folder.
