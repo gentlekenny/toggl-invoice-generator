@@ -23,7 +23,7 @@ yarn install
 - Run command below to generate invoice (FROM ROOT FOLDER!!!)
 
 ```
-src/ts-node pdf.ts
+ts-node src/pdf.ts
 ```
 
 After running this command, the message in terminal will appear, saying _Done: invoice.pdf is created!_. File named **invoice.pdf** will be generated in root folder.
