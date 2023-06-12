@@ -1,5 +1,7 @@
 # Toggl Invoice Generator
 
+![Toggle Logo](https://www.cpapracticeadvisor.com/wp-content/uploads/sites/2/2022/07/27659/logo_1_.59f9ec13e81a7.png)
+
 This is an Invoice Generator for Toggle entries which I created for my Estonian client a year back.
 I didn't even bother hiding env variables so you can test it. Just modify .env variables to your Toggl properties and it will work effortlessly.
 
