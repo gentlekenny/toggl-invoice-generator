@@ -16,7 +16,7 @@ To run this invoice generator, do the following:
 - Install node packages from root folder with
 
 ```
-npm install
+yarn install
 ```
 
 - Position yourself in **src** folder
