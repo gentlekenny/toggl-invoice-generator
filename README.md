@@ -27,4 +27,4 @@ npm install
 ts-node pdf.ts
 ```
 
-After running this command, the message in terminal will appear, saying _Done: invoice.pdf is created!_. File named **invoice.pdf** will be generated in folder root.
+After running this command, the message in terminal will appear, saying _Done: invoice.pdf is created!_. File named **invoice.pdf** will be generated in root folder.
